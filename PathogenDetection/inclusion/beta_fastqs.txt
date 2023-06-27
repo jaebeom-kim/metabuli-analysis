@@ -1,0 +1,3 @@
+/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484348_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484348_2.fastq	
+/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484346_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484346_2.fastq
+/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484345_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/beta/SRR14484345_2.fastq
