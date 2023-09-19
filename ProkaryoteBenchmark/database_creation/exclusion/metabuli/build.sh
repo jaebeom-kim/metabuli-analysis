@@ -17,8 +17,3 @@
     --threads 64 \
     --mask 1 \
     --mask-prob 0.9 \
-    --accession-level 1 
-
-
-
-

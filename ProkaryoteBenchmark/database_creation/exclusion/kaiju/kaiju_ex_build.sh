@@ -5,7 +5,7 @@
 # Run prodigal to get protein sequences from genomes
 # Edit the header of the protein sequences to include taxid
 # Format) >sequenceID_taxid
-# Merge all the protein sequences into one file > proteins-for-inclusion.faa
+# Merge all the protein sequences into one file > proteins-for-exclusion.faa
 
 kaiju-mkbwt -n 32 -a ARNDCQEGHILKMFPOSUTWYVBZXJ \
     -o /mnt/scratch/jaebeom/gtdb_202_exclusion/db/kaiju/exclusionDB \
