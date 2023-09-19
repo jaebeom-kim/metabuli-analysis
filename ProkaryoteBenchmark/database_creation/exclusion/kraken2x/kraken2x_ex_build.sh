@@ -8,7 +8,7 @@
 # Merge all the protein sequences into one file > proteins-for-inclusion_kraken2x.faa
 
 # Taxonomy files
-cp -r ../../taxonomy /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x
+cp -r ../../taxonomy /mnt/scratch/jaebeom/gtdb_202_exclusion/db/kraken2x
 
 
 find /mnt/scratch/jaebeom/gtdb_202_inclusion/genomes/ -name "*.fna" \
