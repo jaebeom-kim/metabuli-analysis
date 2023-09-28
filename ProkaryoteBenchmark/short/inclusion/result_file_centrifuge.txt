@@ -1,0 +1,1 @@
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/centrifuge/centrifuge_classifications.tsv

@@ -1,0 +1,5 @@
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/krakenuniq/krakenuniq_classifiations.tsv
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/kraken2x/kraken2x_classifications.tsv
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/kraken2/kraken2_classifications.tsv
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/kaiju/kaiju_classifications.tsv
+

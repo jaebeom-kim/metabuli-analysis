@@ -1,0 +1,1 @@
+/mnt/scratch/jaebeom/gtdb_202_inclusion/results/mmseqs/mmseqs2_lca.tsv
