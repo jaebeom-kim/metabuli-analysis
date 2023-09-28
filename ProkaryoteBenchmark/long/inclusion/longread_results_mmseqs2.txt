@@ -1,0 +1,3 @@
+/fast/jaebeom/long-read/results/mmseqs2/sequel_lca.tsv
+/fast/jaebeom/long-read/results/mmseqs2/ont_lca.tsv
+/fast/jaebeom/long-read/results/metamaps/inclusion/ont_result.EM.reads2Taxon
