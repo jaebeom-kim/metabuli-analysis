@@ -18,4 +18,4 @@
 sort -k1,1 accession2taxid.txt > accession2taxid.sorted.txt
 sort -k1,1 accession2fasta.txt > accession2fasta.sorted.txt
 
-join -1 1 -2 1 accession2taxid.sorted.txt accession2fasta.sorted.txt | awk '{print $2, $3}' > taxid2fasta.txt
+accession2taxid.sorted.txt accession2fasta.sorted.txt | awk '{print $2, $3}' > taxid2fasta.txt
