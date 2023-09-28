@@ -1,0 +1,2 @@
+/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/mmseqs/ss-exclusion_sequel_lca.tsv
+/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/metamaps/ss-exclusion_sequel_result.EM.reads2Taxon
