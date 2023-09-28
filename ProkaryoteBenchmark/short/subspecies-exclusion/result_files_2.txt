@@ -1,0 +1,2 @@
+/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/mmseqs/ss-exclusion_short_lca.tsv
+/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/centrifuge/ss-exclusion_short_classifications.tsv

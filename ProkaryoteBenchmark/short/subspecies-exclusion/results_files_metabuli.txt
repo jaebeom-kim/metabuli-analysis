@@ -1,0 +1,2 @@
+/fast/jaebeom/gtdb-ss-exclusion/results/ss-excluison_short_P_classifications.tsv
+/fast/jaebeom/gtdb-ss-exclusion/results/ss-excluison_short_classifications.tsv
