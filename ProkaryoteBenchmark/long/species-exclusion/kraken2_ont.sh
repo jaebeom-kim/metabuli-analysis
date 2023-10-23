@@ -1,8 +1,8 @@
 #!/bin/bash
 
-~/kraken2/kraken2 --db ./ \
+~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/kraken2 \
 	--report /fast/jaebeom/long-read/exclusion/results/kraken2/ont_report.tsv \
 	--threads 32 \
-	/fast/jaebeom/long-read/exclusion/ont.fastq \
+	/fast/jaebeom/long-read/exclusion/prokaryote_exclusion_ont.fq \
 	--minimum-hit-groups 3 \
 	> /fast/jaebeom/long-read/exclusion/results/kraken2/ont_classifications.tsv

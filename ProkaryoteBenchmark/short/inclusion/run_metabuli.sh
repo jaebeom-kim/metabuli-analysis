@@ -1,14 +1,16 @@
 #!/bin/bash
-THREADS=$1
-RAM=$2
-NUM=$3
 
-{ /usr/bin/time time -v  ~/Metabuli-temp/build-new/src/metabuli classify --threads ${THREADS} \
-	--max-ram ${RAM} \
-	/mnt/scratch/jaebeom/gtdb_202_inclusion/query/reads.fna_1 \
-	/mnt/scratch/jaebeom/gtdb_202_inclusion/query/reads.fna_2 \
-	/mnt/scratch/jaebeom/gtdb_202_inclusion/databases/metabuli20_0511 \
-       	/mnt/scratch/jaebeom/gtdb_202_inclusion/results/metabuli20 \
-	${THREADS}_${RAM}_perf \
-	 > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/metabuli20/${THREADS}_${RAM}_${NUM}_0522.log ;
-} 2> /mnt/scratch/jaebeom/gtdb_202_inclusion/results/metabuli20/${THREADS}_${RAM}_${NUM}_0522.time
+ ~/dev/Metabuli/build-release/src/metabuli classify --threads 32 \
+ 	/fast/jaebeom/inreads.fna_1 \
+	/fast/jaebeom/inreads.fna_2 \
+	/fast/jaebeom/gtdb-inclusion-db/databases/metabuli \
+	/fast/jaebeom/gtdb-inclusion-db/databases/metabuli \
+	metabuli
+
+ ~/dev/Metabuli/build-release/src/metabuli classify --threads 32 \
+ 	--min-score 0.15 --min-sp-score 0.5 \
+	/fast/jaebeom/inreads.fna_1 \
+	/fast/jaebeom/inreads.fna_2 \
+	/fast/jaebeom/gtdb-inclusion-db/databases/metabuli \
+	/fast/jaebeom/gtdb-inclusion-db/databases/metabuli \
+	metabuli_P

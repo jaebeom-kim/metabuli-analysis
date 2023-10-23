@@ -1,0 +1,2 @@
+/fast/jaebeom/long-read/exclusion/results/mmseqs2/ont_lca.tsv
+/fast/jaebeom/long-read/results/metamaps/exclusion/ont_result.EM.reads2Taxon

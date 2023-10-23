@@ -1,28 +1,50 @@
 #!/bin/bash
 
-results=$1
-# <results file format>
-# absolute path to results file 1
-# absolute path to results file 2
-# ...
+# ont
 
-answer=$2
-# <answer file format>
-# absolute path to answer file 1
-# absolute path to answer file 2
-# ...
-
-taxonomy=$3
-# directory containing taxonomy dump files used for DB creation
-
-threads=$4
-
-col_readid=0
-col_taxid=1
-
-metabuli grade ${results} ${answer} ${taxonomy} \
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_ont.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
         --test-rank genus,family,order,class,phylum,superkingdom \
-        --readid-col ${col_readid} \
-        --taxid-col ${col_taxid} \
+        --readid-col 1 \
+        --taxid-col 2 \
         --test-type gtdb \
-        --threads ${threads} \
+        --threads 7 \
+        > ./grade_ont_1.txt
+
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_ont_2.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 1 \
+        --test-type gtdb \
+        --threads 7 \
+        > ./grade_ont_2.txt
+
+# sequel
+
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_sequel.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank genus,family,order,class,phylum,superkingdom \
+        --readid-col 1 \
+        --taxid-col 2 \
+        --test-type gtdb \
+        --threads 7 \
+        > ./grade_sequel_1.txt
+
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_sequel_2.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 1 \
+        --test-type gtdb \
+        --threads 2 \
+        > ./grade_sequel_2.txt
+

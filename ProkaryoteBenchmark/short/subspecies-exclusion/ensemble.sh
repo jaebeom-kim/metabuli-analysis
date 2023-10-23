@@ -1,59 +1,43 @@
 #!/bin/bash
 
-# ~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/kraken2 --paired \
-#          --report /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_report.tsv \
-#          --threads 32 \
-#          --minimum-hit-groups 3 \
-#          --gzip-compressed \
-#          /mnt/scratch/jaebeom/gtdb_202_exclusion/query/prokaryote_exclusion_reads_1.fna.gz \
-#          /mnt/scratch/jaebeom/gtdb_202_exclusion/query/prokaryote_exclusion_reads_2.fna.gz \
-#          --unclassified-out /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified#.fna \
-#          > /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_total_classifications.fna
+# DNA: KrakenUniq
+# AA: Kraken2X
+
+# KrakenUniq for all
+~/krakenuniq/krakenuniq --db /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/db/krakenuniq \
+	--report /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_report.tsv \
+	--threads 32 \
+	--paired \
+	/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/query_reads/prokaryote_ss_exclusion_reads_1.fna \
+	/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/query_reads/prokaryote_ss_exclusion_reads_2.fna \
+	--unclassified-out /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified#.fna \
+	> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_classifications.tsv
 
 
-# ~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/kraken2 --paired \
-#         --report /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_classified_report.tsv \
-#         --threads 32 \
-#         --minimum-hit-groups 3 \
-#         /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_classified_1.fna \
-#         /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_classified_2.fna \
-#         > /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_classified_classifications.tsv
+# KrakeunUniq generates unclassified reads merged by 'N', so we need to split them into two files
+awk -F 'N' '{if (NR%2 == 1) {print $0"/1"} else {print $1} }' \
+	/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified#.fna \
+	> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified_1.fna
+
+awk -F 'N' '{if (NR%2 == 1) {print $0"/2"} else {print $2} }' \
+	/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified#.fna \
+	> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified_2.fna
 
 
-# Merge the unclassified reads
-awk 'BEGIN{i=0; j=0}
-{
-        if(NR==FNR){
-                arr[i]=$0;
-                i++;
-        }else{
-                if(FNR%2 == 1){
-                        print arr[j];
-                        j++;
-                }else{
-                        print arr[j]"NN"$0;
-                        j++;
-                }
-        }
-}' /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_1.fna \
-        /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_2.fna \
-        > /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_merged.fna
+# Kraken2x for unclassified 
+~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/db/kraken2x \
+	--report /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/kraken2x_short_report.tsv \
+	--threads 32 \
+        --paired \
+        /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified_1.fna \
+        /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_unclassified_2.fna \
+	--minimum-hit-groups 3 \
+	> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/kraken2x_short_classifications.tsv \
 
-mmseqs easy-taxonomy --threads ${THREADS} \
-	/mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_merged.fna \
-	/mnt/scratch/jaebeom/gtdb_202_exclusion/databases/mmseqs/seqTaxDB \
-	/mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/ \
-	./tmp \
-        --threads 32
 
-# ~/kaiju_latest/kaiju \
-#         -t /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/metabuli20/taxonomy/nodes.dmp \
-#         -f /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/kaiju/proteins.fmi \
-#         -i /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_1.fna \
-#         -j /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_unclassified_2.fna \
-#         -z 32 \
-#         -o /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kaiju_classifications.tsv
+awk -F 	'\t' '{if($1 == "C") print $0}' /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq_short_classifications.tsv \
+	> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq+kraken2x_short_classifications.tsv
 
-# cat /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kraken2_classified_classifications.tsv \
-#     /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/kaiju_classifications.tsv \
-#     > /mnt/scratch/jaebeom/gtdb_202_exclusion/results/ensemble/merged_classifications.tsv
+
+cat /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/kraken2x_short_classifications.tsv \
+	>> /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/ensemble/krakenuniq+kraken2x_short_classifications.tsv

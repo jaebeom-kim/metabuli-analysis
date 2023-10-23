@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # It grades the results of the long-read inclusion benchmark, including both ONT and PacBio reads.
+
 ~/dev/Metabuli/build-release/src/metabuli grade \
         ./longread_results.txt \
         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
@@ -22,3 +23,4 @@
         --test-type gtdb \
         --threads 3 \
         > ./inclusion_longread_grade_2.txt
+

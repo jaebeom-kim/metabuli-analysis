@@ -1,0 +1,8 @@
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/metabuli/metabuli_classifications.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/metabuli/metabuli_P_classifications.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/centrifuge/centrifuge_results_for_scoring.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/kaiju/kaiju_results.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/kraken2/kraken2_results.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/kraken2x/kraken2x_classifications.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/krakenuniq/krakenuniq_results.tsv
+/mnt/scratch/jaebeom/gtdb_202_exclusion/results/mmseqs/mmseqs2_results_for_scoring.tsv

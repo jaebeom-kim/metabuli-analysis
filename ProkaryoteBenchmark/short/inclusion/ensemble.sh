@@ -1,32 +1,42 @@
 #!/bin/bash
 
-~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/kraken2 --paired \
-         --report /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_report.tsv \
+# DNA: krakenuniq
+# AA: kraken2x
+
+~/krakenuniq/krakenuniq --db /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/krakenuniq --paired \
+         --report /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_report.tsv \
          --threads 32 \
-         --minimum-hit-groups 3 \
-         --gzip-compressed \
          /mnt/scratch/jaebeom/gtdb_202_inclusion/query/prokaryote_inclusion_reads_1.fna.gz \
          /mnt/scratch/jaebeom/gtdb_202_inclusion/query/prokaryote_inclusion_reads_2.fna.gz \
-         --unclassified-out /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_unclassified#.fna \
-         > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_total_classifications.fna
+         --unclassified-out /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified.fna \
+         > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_total_classifications.tsv
 
-~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/kraken2 --paired \
-        --report /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_classified_report.tsv \
-        --threads 32 \
+# KrakeunUniq generates unclassified reads merged by 'N', so we need to split them into two files
+awk -F 'N' '{if (NR%2 == 1) {print $0"/1"} else {print $1} }' \
+	/mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified.fna \
+	> /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified_1.fna
+
+awk -F 'N' '{if (NR%2 == 1) {print $0"/2"} else {print $2} }' \
+	/mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified.fna \
+	> /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified_2.fna
+
+# Kraken2x for unclassified 
+~/kraken2/kraken2 --db /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/kraken2x \
+	--report /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2x_short_report.tsv \
+	--threads 32 \
+        --paired \
+        /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified_1.fna \
+        /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_unclassified_2.fna \
         --minimum-hit-groups 3 \
-        /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_classified_1.fna \
-        /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_classified_2.fna \
-        > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_classified_classifications.tsv
+	> /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2x_short_classifications.tsv \
 
 
-~/kaiju_latest/kaiju \
-        -t /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/metabuli20_0511/taxonomy/nodes.dmp \
-        -f /mnt/scratch/jaebeom/gtdb_202_inclusion/databases/kaiju_new/proteins.fmi \
-        -i /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_unclassified_1.fna \
-        -j /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_unclassified_2.fna \
-        -z 32 \
-        -o /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kaiju_classifications.tsv
+awk -F 	'\t' '{if($1 == "C") print $0}' \
+        /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq_short_total_classifications.tsv \
+        > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq+kraken2x_short_classifications.tsv
 
-cat /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2_classified_classifications.tsv \
-    /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kaiju_classifications.tsv \
-    > /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/merged_classifications.tsv
+
+cat /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/kraken2x_short_classifications.tsv \
+	>> /mnt/scratch/jaebeom/gtdb_202_inclusion/results/ensemble/krakenuniq+kraken2x_short_classifications.tsv
+
+

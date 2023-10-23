@@ -1,6 +1,6 @@
 /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/kraken2x/ss-exclusion_ont_classifications.tsv
 /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/krakenuniq/ss-exclusion_ont_classifications.tsv
-/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/metabuli/ss-exclusion_ont_classifications.tsv
-/mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/metabuli/ss-exclusion_ont_P_classifications.tsv
 /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/kraken2/ss-exclusion_ont_classifications.tsv
 /mnt/scratch/jaebeom/gtdb_202_ss_exclusion/results/kaiju/ss-exclusion_ont_result.tsv
+/fast/jaebeom/gtdb-ss-exclusion/results/ss-excluison_ont_classifications.tsv
+/fast/jaebeom/gtdb-ss-exclusion/results/ss-excluison_ont_P_classifications.tsv

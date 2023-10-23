@@ -1,0 +1,8 @@
+/fast/jaebeom/long-read/exclusion/results/kraken2x/sequel_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/krakenuniq/sequel_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/metabuli/metabuli_sequel_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/metabuli/metabuli_P_sequel_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/kaiju/sequel_result.tsv
+/fast/jaebeom/long-read/exclusion/results/centrifuge/sequel_classifications.tsv2
+/fast/jaebeom/long-read/exclusion/results/kraken2/sequel_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/mmseqs2/sequel_lca.tsv

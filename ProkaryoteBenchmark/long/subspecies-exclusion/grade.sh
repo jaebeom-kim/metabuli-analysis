@@ -25,7 +25,7 @@ col_taxid=1
 ## pacbio_sequel
 
 ~/dev/Metabuli/build-release/src/metabuli grade \
-        ./result_files_ont_m.txt \
+        ./result_files_sequel_1.txt \
         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
         --test-rank species,genus,family,order,class,phylum,superkingdom \
@@ -35,58 +35,58 @@ col_taxid=1
         --threads 6 \
         > ./subspecies-exclusion_sequel_grade_1.txt
 
-# ~/dev/Metabuli/build-release/src/metabuli grade \
-#         ./result_files_sequel_2.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
-#         --test-rank species,genus,family,order,class,phylum,superkingdom \
-#         --readid-col 0 \
-#         --taxid-col 1 \
-#         --test-type gtdb \
-#         --threads 2 \
-#         > ./subspecies-exclusion_sequel_grade_2.txt
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_sequel_2.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank species,genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 1 \
+        --test-type gtdb \
+        --threads 2 \
+        > ./subspecies-exclusion_sequel_grade_2.txt
 
-# ~/dev/Metabuli/build-release/src/metabuli grade \
-#         ./result_files_sequel_3.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
-#         --test-rank species,genus,family,order,class,phylum,superkingdom \
-#         --readid-col 0 \
-#         --taxid-col 2 \
-#         --test-type gtdb \
-#         --threads 2 \
-#         > ./subspecies-exclusion_sequel_grade_3.txt
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_sequel_3.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank species,genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 2 \
+        --test-type gtdb \
+        --threads 2 \
+        > ./subspecies-exclusion_sequel_grade_3.txt
 
-## ont
-# ~/dev/Metabuli/build-release/src/metabuli grade \
-#         ./result_files_ont_1.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
-#         --test-rank species,genus,family,order,class,phylum,superkingdom \
-#         --readid-col 1 \
-#         --taxid-col 2 \
-#         --test-type gtdb \
-#         --threads 6 \
-#         > ./subspecies-exclusion_ont_grade_1.txt
+# ont
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_ont_1.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank species,genus,family,order,class,phylum,superkingdom \
+        --readid-col 1 \
+        --taxid-col 2 \
+        --test-type gtdb \
+        --threads 6 \
+        > ./subspecies-exclusion_ont_grade_1.txt
 
-# ~/dev/Metabuli/build-release/src/metabuli grade \
-#         ./result_files_ont_2.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
-#         --test-rank species,genus,family,order,class,phylum,superkingdom \
-#         --readid-col 0 \
-#         --taxid-col 1 \
-#         --test-type gtdb \
-#         --threads 2 \
-#         > ./subspecies-exclusion_ont_grade_2.txt
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_ont_2.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank species,genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 1 \
+        --test-type gtdb \
+        --threads 2 \
+        > ./subspecies-exclusion_ont_grade_2.txt
 
-# ~/dev/Metabuli/build-release/src/metabuli grade \
-#         ./result_files_ont_3.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
-#         ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
-#         --test-rank species,genus,family,order,class,phylum,superkingdom \
-#         --readid-col 0 \
-#         --taxid-col 2 \
-#         --test-type gtdb \
-#         --threads 2 \
-#         > ./subspecies-exclusion_ont_grade_3.txt
+~/dev/Metabuli/build-release/src/metabuli grade \
+        ./result_files_ont_3.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/answers.txt \
+        ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy \
+        --test-rank species,genus,family,order,class,phylum,superkingdom \
+        --readid-col 0 \
+        --taxid-col 2 \
+        --test-type gtdb \
+        --threads 2 \
+        > ./subspecies-exclusion_ont_grade_3.txt

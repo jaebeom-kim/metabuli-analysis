@@ -1,0 +1,1 @@
+/fast/jaebeom/long-read/exclusion/results/mmseqs2/sequel_lca.tsv

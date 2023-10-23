@@ -1,0 +1,7 @@
+/fast/jaebeom/long-read/exclusion/results/kraken2x/ont_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/krakenuniq/ont_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/metabuli/metabuli_ont_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/metabuli/metabuli_P_ont_classifications.tsv
+/fast/jaebeom/long-read/exclusion/results/kaiju/ont_result.tsv
+/fast/jaebeom/long-read/exclusion/results/centrifuge/ont_classifications.tsv2
+/fast/jaebeom/long-read/exclusion/results/kraken2/ont_classifications.tsv
