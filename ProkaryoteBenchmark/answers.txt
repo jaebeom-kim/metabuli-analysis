@@ -12,3 +12,7 @@
 /home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
 /home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
 /home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
+/home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
+/home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
+/home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
+/home/jaebeom/metabuli-analysis/ProkaryoteBenchmark/assembly_accession_2_gtdb_taxid.tsv
