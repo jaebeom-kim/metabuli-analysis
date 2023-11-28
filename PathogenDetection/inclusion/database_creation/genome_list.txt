@@ -1,0 +1,2 @@
+/data3/jaebeom/benchmarks/covid_inclusion/db_with_human/genomes/viral.genomic.filtered.5var.fna
+/fast/databases/metabuli/filteringDB/human/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna

@@ -1,6 +1,3 @@
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_1.fna
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_2.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_2.fna
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_1.fna
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_2.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_2.fna
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_1.fna
-/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_2.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_2.fna
+/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594652_2.fastq
+/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594785_2.fastq
+/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_1.fastq	/data3/jaebeom/benchmarks/covid_inclusion/query/omicron/ERR9594877_2.fastq
