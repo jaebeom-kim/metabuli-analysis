@@ -11,5 +11,5 @@ find /mnt/scratch/jaebeom/gtdb_202_inclusion/genomes/ -name "*.fna" \
     kraken2-build --add-to-library {} \
     --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2
 
-# kraken2-build --build --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2 \
-#     --threads 32
+kraken2-build --build --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2 \
+    --threads 32

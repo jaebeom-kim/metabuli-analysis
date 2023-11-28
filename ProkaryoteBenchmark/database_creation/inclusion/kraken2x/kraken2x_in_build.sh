@@ -10,11 +10,15 @@
 # Taxonomy files
 cp -r ../../taxonomy /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x
 
+mkdir -p /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x/library
 
-find /mnt/scratch/jaebeom/gtdb_202_inclusion/genomes/ -name "*.fna" \
-    | xargs -0 -I{} -n1 \
-    kraken2-build --add-to-library --protein {} \
-    --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x
 
-# kraken2-build --build --protein --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x \
-#     --threads 32
+kraken2-build --add-to-library \
+    /mnt/scratch/jaebeom/gtdb_202_inclusion/files_for_db/proteins-for-inclusion_kraken2format.faa \
+    --db /fast/jaebeom/realdata_benchmarks/databases/kraken2x --protein
+
+kraken2-build --build  --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x \
+    --threads 32 --protein
+
+
+
