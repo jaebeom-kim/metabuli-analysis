@@ -1,0 +1,2 @@
+/data3/jaebeom/benchmarks/covid_exclusion/db_with_human/genomes/viral.genomic.filtered.SARS-CoV-2-removed.fna
+/data3/jaebeom/benchmarks/covid_exclusion/db_with_human/genomes/GCF_009914755.1_T2T-CHM13v2.0_genomic.fna
