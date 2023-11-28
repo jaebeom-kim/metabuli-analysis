@@ -28,14 +28,14 @@
 #     --DB /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/metamaps 
 # } 2> /fast/jaebeom/long-read/results/metamaps/exclusion/classify_sequel.time
 
-# sequel ccs
-{ /usr/bin/time time -v ~/bin/MetaMaps/metamaps mapAgainstIndex \
-    --all -t 32 \
-    -i /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/metamaps/exclusionDB.idx \
-    -q /fast/jaebeom/long-read/exclusion/prokaryote_sp_exclusion_sequel_ccs.fastq \
-    -o /fast/jaebeom/long-read/results/metamaps/exclusion/sequel_ccs_result    
-    > /fast/jaebeom/long-read/results/metamaps/exclusion/mapAgainstIndex_sequel_ccs.log ;
-} 2> /fast/jaebeom/long-read/results/metamaps/exclusion/mapAgainstIndex_sequel_ccs.time
+# # sequel ccs
+# { /usr/bin/time time -v ~/bin/MetaMaps/metamaps mapAgainstIndex \
+#     --all -t 32 \
+#     -i /mnt/scratch/jaebeom/gtdb_202_exclusion/databases/metamaps/exclusionDB.idx \
+#     -q /fast/jaebeom/long-read/exclusion/prokaryote_sp_exclusion_sequel_ccs.fastq \
+#     -o /fast/jaebeom/long-read/results/metamaps/exclusion/sequel_ccs_result    
+#     > /fast/jaebeom/long-read/results/metamaps/exclusion/mapAgainstIndex_sequel_ccs.log ;
+# } 2> /fast/jaebeom/long-read/results/metamaps/exclusion/mapAgainstIndex_sequel_ccs.time
 
 { /usr/bin/time time -v  ~/bin/MetaMaps/metamaps classify \
     -t 32 \
