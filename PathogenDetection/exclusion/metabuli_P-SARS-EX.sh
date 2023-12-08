@@ -10,7 +10,7 @@ do
 		${read1} ${read2} \
 		/data3/jaebeom/benchmarks/covid_exclusion/databases/metabuli20/ \
 		/data3/jaebeom/benchmarks/covid_exclusion/results/metabuli20/ \
-		${sample} --threads 32 \
+		${sample}_P --threads 32 \
 		--taxonomy-path ../metabuli20/taxonomy
 done
 
