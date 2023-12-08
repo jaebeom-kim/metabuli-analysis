@@ -3,6 +3,8 @@ Scripts used for database creation and classification of each tool in benchmarks
 
 Scripts and raw values for plotting can be found in [metabuli-plots](https://github.com/jaebeom-kim/metabuli-plots).
 
+For the hybrid approach, which runs DNA tool first and AA tool for unclassified reads, naming `ensemble` or `hybrid` is used. Both are the same.
+
 ## How to measure performance of tools
 The crieteria for true positive and false positive and the formula for calculating precision, recall, and F1 score are defined in the manuscript. 
 ### Prokaryote benchmarks
