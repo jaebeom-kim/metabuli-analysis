@@ -11,7 +11,7 @@ cp ~/metabuli-analysis/RealMetagenomes/database_creation/gtdb+human.accession2ta
 
 mkdir -p /fast/jaebeom/realdata_benchmarks/databases/kraken2/library
 
-awk '{print $0}' /mnt/scratch/jaebeom/gtdb_202_inclusion/genome_list.txt | while read -r line; do
+awk '{print $0}' /fast/jaebeom/gtdb-inclusion-genomes/library-files.txt | while read -r line; do
     kraken2-build --add-to-library "${line}" \
         --db /fast/jaebeom/realdata_benchmarks/databases/kraken2
 done
