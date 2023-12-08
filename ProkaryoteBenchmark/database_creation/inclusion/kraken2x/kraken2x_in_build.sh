@@ -8,16 +8,15 @@
 # Merge all the protein sequences into one file > proteins-for-inclusion_kraken2x.faa
 
 # Taxonomy files
-cp -r ../../taxonomy /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x
+cp -r ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy /mnt/scratch/jaebeom/gtdb-in/kraken2x/
 
-mkdir -p /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x/library
-
+mkdir -p /mnt/scratch/jaebeom/gtdb-in/kraken2x/library
 
 kraken2-build --add-to-library \
-    /mnt/scratch/jaebeom/gtdb_202_inclusion/files_for_db/proteins-for-inclusion_kraken2format.faa \
-    --db /fast/jaebeom/realdata_benchmarks/databases/kraken2x --protein
+    /mnt/scratch/jaebeom/gtdb-in/proteins-for-inclusion_kraken2format.faa \
+    --db /mnt/scratch/jaebeom/gtdb-in/kraken2x/ --protein
 
-kraken2-build --build  --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2x \
+kraken2-build --build  --db /mnt/scratch/jaebeom/gtdb-in/kraken2x \
     --threads 32 --protein
 
 

@@ -7,8 +7,8 @@
 # Format) >sequenceID_taxid
 # Merge all the protein sequences into one file > proteins-for-inclusion.faa
 
-kaiju-mkbwt -n 32 -a ARNDCQEGHILKMFPOSUTWYVBZXJ \
-    -o /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kaiju/inclusionDB \
-    /mnt/scratch/jaebeom/gtdb_202_inclusion/files_for_db/proteins-for-inclusion.faa
+~/kaiju_latest/kaiju-mkbwt -n 32 -a ARNDCQEGHILKMFPOSUTWYVBZXJ \
+    -o /mnt/scratch/jaebeom/gtdb-in/kaiju/inclusionDB \
+    /mnt/scratch/jaebeom/gtdb-in/proteins-for-inclusion.faa
 
-kaiju-mkfmi /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kaiju/inclusionDB
+~/kaiju_latest/kaiju-mkfmi /mnt/scratch/jaebeom/gtdb-in/kaiju/inclusionDB

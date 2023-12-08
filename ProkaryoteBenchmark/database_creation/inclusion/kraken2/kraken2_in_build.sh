@@ -3,13 +3,11 @@
 # Reference: https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown
 
 # Taxonomy files
-cp -r ../../taxonomy /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2
-cp ../../gtdb.accession2taxid /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2/taxonomy/
+cp -r  ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/taxonomy/ /mnt/scratch/jaebeom/gtdb-in/kraken2
+cp ~/metabuli-analysis/ProkaryoteBenchmark/database_creation/gtdb.accession2taxid /mnt/scratch/jaebeom/gtdb-in/kraken2/taxonomy/
 
-find /mnt/scratch/jaebeom/gtdb_202_inclusion/genomes/ -name "*.fna" \
-    | xargs -0 -I{} -n1 \
-    kraken2-build --add-to-library {} \
-    --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2
+kraken2-build --add-to-library /mnt/scratch/jaebeom/gtdb-in/gtdb_202_inclusion_reference_genomes.fna \
+    --db /mnt/scratch/jaebeom/gtdb-in/kraken2
 
-kraken2-build --build --db /mnt/scratch/jaebeom/gtdb_202_inclusion/db/kraken2 \
+kraken2-build --build --db /mnt/scratch/jaebeom/gtdb-in/kraken2 \
     --threads 32
